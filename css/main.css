@@ -7,8 +7,8 @@
  */
 
 /* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+Base styles: opinionated defaults
+========================================================================== */
 
 html {
     color: #222;
@@ -81,8 +81,8 @@ textarea {
 }
 
 /* ==========================================================================
-   Browser Upgrade Prompt
-   ========================================================================== */
+Browser Upgrade Prompt
+========================================================================== */
 
 .browserupgrade {
     margin: 0.2em 0;
@@ -92,33 +92,36 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+Author's custom styles
+========================================================================== */
+
+html{
+    height: 100%;
+    min-height: 100%;
+}
 
 body {
-  background: url(../img/bg.jpg) no-repeat fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
-  color: #fefefe;
-  font-family: 'Montserrat Alternates', sans-serif;
+    min-height:100%;
+    background: url(../img/bg.jpg) no-repeat center fixed;
+    background-size: cover;
+    color: #fefefe;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
 h1 {
-  font-size: 3.5rem;
-  margin-bottom: 0;
-  margin-top: 8rem;
+    font-size: 3.5rem;
+    margin-bottom: 0;
+    margin-top: 8rem;
 }
 
 .rings {
-  height: 3rem;
-  padding: 1.5rem 0;
+    height: 3rem;
+    padding: 1.5rem 0;
 }
 
 /* ==========================================================================
-   Helper classes
-   ========================================================================== */
+Helper classes
+========================================================================== */
 
 /*
  * Hide visually and from screen readers
@@ -191,27 +194,27 @@ h1 {
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
+EXAMPLE Media Queries for Responsive Design.
+These examples override the primary ('mobile first') styles.
+Modify as content requires.
+========================================================================== */
 
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
 }
 
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
+Print styles.
+Inlined to avoid the additional HTTP request:
+http://www.phpied.com/delay-loading-your-print-css/
+========================================================================== */
 
 @media print {
     *,
@@ -221,9 +224,9 @@ h1 {
     *:first-line {
         background: transparent !important;
         color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
+        http://www.sanbeiji.com/archives/953 */
+box-shadow: none !important;
+text-shadow: none !important;
     }
 
     a,
@@ -244,44 +247,44 @@ h1 {
      * or use the `javascript:` pseudo protocol
      */
 
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
+a[href^="#"]:after,
+a[href^="javascript:"]:after {
+    content: "";
+}
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+pre,
+blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+}
 
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
+/*
+ * Printing Tables:
+ * http://css-discuss.incutio.com/wiki/Printing_Tables
+ */
 
-    thead {
-        display: table-header-group;
-    }
+thead {
+    display: table-header-group;
+}
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+tr,
+img {
+    page-break-inside: avoid;
+}
 
-    img {
-        max-width: 100% !important;
-    }
+img {
+    max-width: 100% !important;
+}
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+p,
+h2,
+h3 {
+    orphans: 3;
+    widows: 3;
+}
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+h2,
+h3 {
+    page-break-after: avoid;
+}
 }
