@@ -97,6 +97,8 @@ textarea {
 
 body {
   background: url(../img/bg.jpg) no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
   background-size: cover;
   background-position: center;
   color: #fefefe;
