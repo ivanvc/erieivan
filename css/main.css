@@ -95,6 +95,66 @@ Browser Upgrade Prompt
 Author's custom styles
 ========================================================================== */
 
+a, button, input {
+    transition: .3s all ease;
+}
+
+button, input, textarea, select {
+    display: inline-block;
+    -webkit-appearance: none;
+    outline: none;
+    color: inherit;
+    overflow: visible;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+button,
+input[type='button'],
+input[type='submit'] {
+    cursor: pointer;
+    border: 1px solid #CFA2B4;
+    display: inline-block;
+      box-sizing: border-box;
+  padding: 0.8rem 1.2rem;
+    margin-bottom: 0;
+    line-height: 1.2rem;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border-radius: 2px;
+    margin-top: 1.9rem;
+}
+
+button:hover,
+input[type='button']:hover,
+input[type='submit']:hover {
+    border: 1px solid #82596A;
+    color: #82596A;
+}
+
+button:active,
+input[type='button']:active,
+input[type='submit']:active {
+    border: 1px solid #6A939C;
+    color: #6A939C;
+}
+
+input:focus,
+.rd-mailform label input:focus {
+    border: 1px solid #82596A;
+    color: #82596A;
+}
+
 html {
     height: 100%;
     width: 100%;
@@ -104,11 +164,8 @@ html {
 body {
     min-height:100%;
     min-width: 100%;
-    background: url(../img/bg.jpg) no-repeat center fixed;
-    background-size: cover;
-    -webkit-background-size: cover;
     color: #fefefe;
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
@@ -117,12 +174,180 @@ h1 {
     margin-top: 8rem;
 }
 
+h1,
+h2 {
+    font-family: 'Poiret One', sans-serif;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
 .rings {
     height: 3rem;
     padding: 1.5rem 0 1rem;
 }
 
-h2 {
+.header {
+    background: url(../img/bg.jpg) no-repeat center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    color: #fff;
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .header {
+        height: 100vh;
+        min-height: 600px;
+    }
+}
+
+.header,
+.header h1,
+.header h2,
+.header h3,
+.header h4,
+.header h5,
+.header h6 {
+    color: #fff;
+}
+
+.header img {
+    width: 25%;
+}
+
+.content {
+    min-height: 100vh;
+}
+
+.content .section {
+    position: relative;
+}
+
+.content .rsvp {
+    background: #fff;
+    color: #cfa2b4;
+    text-align: center;
+}
+
+.rsvp h2 {
+    color: #82596A;
+}
+
+.rsvp .left {
+    margin-top: 4rem;
+}
+
+@media (max-width: 991px) {
+    .rsvp .left {
+        margin-top: initial;
+    }
+}
+
+.rsvp a {
+    color: #cfa2b4;
+    text-decoration: none;
+    border-bottom: 1px solid #cfa2b4;
+}
+
+.rsvp a:hover,
+.rsvp a:active {
+    border-bottom: 1px solid #82596A;
+    color: #82596A;
+}
+
+.rsvp a:active {
+    border-bottom: 1px solid #6A939C;
+    color: #6A939C;
+}
+
+.hotels {
+    background: #82596A;
+    color: #eee;
+    text-align: center;
+}
+
+.hotels a {
+    color: #eee;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+}
+
+.hotels a:hover,
+.hotels a:active {
+    border-bottom: 1px solid #cfa2b4;
+    color: #cfa2b4;
+}
+
+.hotels a:active {
+    border-bottom: 1px solid #6A939C;
+    color: #6A939C;
+}
+
+.ceremony {
+    text-align: center;
+    min-height: 600px;
+    background: #82596A;
+    color: #eee;
+}
+
+.ceremony .subtitle {
+    text-transform: uppercase;
+}
+
+.hotels h2,
+.ceremony h2 {
+    color: #cfa2b4;
+}
+
+.dress-code {
+    background: #6A939C;
+    color: #eee;
+    text-align: center;
+}
+
+.dress-code h2 {
+    color: #485b5f;
+}
+
+.section .container {
+    padding: 4rem 0;
+}
+
+hr {
+    width: 50%;
+    margin: 3.5rem auto;
+    height: 0;
+    border: solid 1px #cfa2b4;
+}
+
+.map {
+    height: 100%;
+    min-height: 480px;
 }
 
 /* ==========================================================================
@@ -151,13 +376,13 @@ Helper classes
     padding: 0;
     position: absolute;
     width: 1px;
-}
+    }
 
-/*
- * Extends the .visuallyhidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
+    /*
+     * Extends the .visuallyhidden class to allow the element
+     * to be focusable when navigated to via the keyboard:
+     * https://www.drupal.org/node/897638
+     */
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
@@ -175,6 +400,72 @@ Helper classes
 
 .invisible {
     visibility: hidden;
+}
+
+.min-height {
+    min-height: 140px;
+}
+
+.image-md-aside {
+    position: relative;
+    overflow: hidden;
+}
+@media (min-width: 992px) {
+    .image-md-aside {
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        top: 0;
+    }
+}
+
+.position-left {
+    left: 0;
+}
+@media (min-width: 992px) {
+    .position-left {
+        right: calc(50% - 970px / 2 + 30px + (970px / 12) * 7);
+    }
+}
+
+.position-right {
+    right: 0;
+}
+@media (min-width: 992px) {
+    .position-right {
+        left: calc(50% - 970px / 2 + 30px + (970px / 12) * 7);
+    }
+}
+
+.round {
+    border-radius: 50%;
+}
+
+.image-wrap {
+    overflow: hidden;
+}
+.image-wrap img {
+    position: relative;
+}
+@media (min-width: 992px) {
+    .image-wrap img {
+        width: auto;
+        min-width: 100%;
+        max-width: none;
+        height: auto;
+        min-height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+@media (min-width: 992px) and (min-width: 1200px) {
+    .image-wrap img {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
 }
 
 /*
@@ -197,13 +488,13 @@ Helper classes
 
 .clearfix:after {
     clear: both;
-}
+    }
 
-/* ==========================================================================
-EXAMPLE Media Queries for Responsive Design.
-These examples override the primary ('mobile first') styles.
-Modify as content requires.
-========================================================================== */
+    /* ==========================================================================
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    Modify as content requires.
+    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
@@ -214,13 +505,13 @@ Modify as content requires.
 (min-resolution: 1.25dppx),
 (min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
-}
+    }
 
-/* ==========================================================================
-Print styles.
-Inlined to avoid the additional HTTP request:
-http://www.phpied.com/delay-loading-your-print-css/
-========================================================================== */
+    /* ==========================================================================
+    Print styles.
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+    ========================================================================== */
 
 @media print {
     *,
@@ -246,12 +537,12 @@ text-shadow: none !important;
 
     abbr[title]:after {
         content: " (" attr(title) ")";
-    }
+        }
 
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
+        /*
+         * Don't show links that are fragment identifiers,
+         * or use the `javascript:` pseudo protocol
+         */
 
 a[href^="#"]:after,
 a[href^="javascript:"]:after {
@@ -262,12 +553,12 @@ pre,
 blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
-}
+    }
 
-/*
- * Printing Tables:
- * http://css-discuss.incutio.com/wiki/Printing_Tables
- */
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
 
 thead {
     display: table-header-group;
