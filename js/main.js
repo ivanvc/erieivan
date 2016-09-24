@@ -7,6 +7,33 @@ function ready(fn) {
 }
 
 ready(function() {
+    var form = document.getElementById('rsvp-form')
+    var button = form.querySelectorAll("input[type=submit]")[0]
+    form.addEventListener('submit', function(ev) {
+        ev.preventDefault()
+        button.setAttribute('disabled', true)
+        var request = new XMLHttpRequest()
+        request.open('POST', ev.target.getAttribute('action'), true)
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
+        var email = ev.target.querySelectorAll('input[name=email]')[0].value
+        var phone = ev.target.querySelectorAll('input[name=phone]')[0].value
+        var name = ev.target.querySelectorAll('input[name=name]')[0].value
+        request.send('email=' + email + '&phone=' + phone + '&name=' + name)
+
+        request.onload = function() {
+            var resp = request.responseText
+            if (request.status >= 200 && request.status < 400) {
+                ev.target.innerHTML = '<h2>' + resp + '</h2>'
+            } else {
+                ev.target.insertBefore('<h3>' + resp + '</h3>', ev.target.firstChild)
+                button.setAttribute('disabled', false)
+            }
+        }
+        request.onerror = function() {
+            ev.target.insertBefore('<h3>Por favor vuelve a intentarlo</h3>', ev.target.firstChild)
+            button.setAttribute('disabled', false)
+        }
+    })
     //skrollr.init()
     var baseMapStyle = function(center) {
         return {

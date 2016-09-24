@@ -64,7 +64,7 @@
                             <p><a href="mailto:rsvp@erieivan.com">rsvp@erieivan.com</a></p>
                         </div>
                         <div class="col-md-6 col-md-preffix-1">
-                            <form class="rd-mailform" action="/">
+                            <form class="rd-mailform" id="rsvp-form" action="https://floating-refuge-64516.herokuapp.com/deliver" method="post">
                                 <fieldset>
                                     <label>
                                         Nombre
@@ -72,13 +72,13 @@
                                     </label>
                                     <label>
                                         Correo electrónico
-                                        <input type="email" placeholder="Correo electrónico" required />
+                                        <input type="email" placeholder="Correo electrónico" name="email" required />
                                     </label>
                                     <label>
                                         Teléfono
-                                        <input type="tel" placeholder="Teléfono" required />
+                                        <input type="tel" placeholder="Teléfono" name="phone" required />
                                     </label>
-                                    <input type="button" value="Confirmar" />
+                                    <input type="submit" value="Confirmar" />
                                 </fieldset>
                             </form>
                         </div>
